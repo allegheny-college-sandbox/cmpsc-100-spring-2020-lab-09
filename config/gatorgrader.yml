@@ -1,0 +1,35 @@
+---
+name: lab-08
+break: true
+indent: 4
+---
+
+src/main/java/labeight:
+    CatnapCaper.java:
+        ConfirmFileExists
+        CountSingleLineComments --language Java --count 9
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        MatchFileFragment --fragment "{Your Name Here} --count 0 --exact
+        MatchFileFragment --fragment "if" --count 6
+        MatchFileFragment --fragment "&&" --count 3
+        MatchFileFragment --fragment "||" --count 1
+        MatchFileFragment --fragment ".nextBoolean()"  --count 2
+        MatchFileFragment --fragment "==" --count 2
+        MatchFileFragment --fragment "boolean " --count 2
+        
+
+writing:
+    reflection.md:
+        ConfirmFileExists
+        mdl --rules ~MD009,~MD012,~MD014,~MD013,~MD022,~MD026,~MD031
+        CountFileWords --count 350
+        CountFileParagraphs --count 7
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        CountMarkdownTags --tag "code_block" --count 4
+        MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
+        
+CountCommits --count 3
+ExecuteCommand --command "gradle build"
+ExecuteCommand --command "gradle -q --console runScenario"
+MatchCommandRegex --command "gradle -q --console runScenario" --regex "Alice recieves [0-3] year(s)" --count 1 --exact
+MatchCommandRegex --command "gradle -q --console runScenario" --regex "Bob recieves [0-3] years(s)" --count 1 --exact
