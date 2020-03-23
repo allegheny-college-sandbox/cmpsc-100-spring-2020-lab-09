@@ -1,5 +1,9 @@
 package labnine;
 
+/** Creates a WizardTest object.
+ *
+ * @author Solutions Repository
+ */
 public class WizardTest {
 
   private final String name;
@@ -9,6 +13,13 @@ public class WizardTest {
   private final int total;
   private boolean isPassing = false;
 
+  /** Constructor.
+   *
+   * @param name Name of test taker
+   * @param magicWords Letter score of the "Magic Words" portion
+   * @param potions Letter score of the "Potions" portion
+   * @param style Letter score of the "Style" portion
+   */
   public WizardTest(String name, String magicWords, String potions, String style) {
     this.name = name;
     this.magicWords = magicWords;
@@ -19,6 +30,10 @@ public class WizardTest {
                  + getNumericScore(style);
   }
   
+  /** Converts letters scores to numeric scores.
+   *
+   * @param score Letter score of a given test section
+   */
   private int getNumericScore(String score) {
     int numericScore;
     switch (score) {
@@ -38,6 +53,9 @@ public class WizardTest {
     return numericScore;
   }
   
+  /** Grades the exam based on letter score -> numeric score total.
+   *
+   */
   public void grade() {
     double average = (double)this.total / 3;
     if (average > 1.0) {
@@ -45,6 +63,9 @@ public class WizardTest {
     }
   }
   
+  /** Creates String representation of object.
+   *
+   */
   public String toString() {
     String score;
     score = "Name: " + this.name + "\n\n";

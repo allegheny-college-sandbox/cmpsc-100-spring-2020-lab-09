@@ -20,7 +20,7 @@ src/main/java/labnine:
         MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
         MatchFileFragment --fragment "switch(score)" --count 1 --exact
         MatchFileFragment --fragment "case" --count 3
-        MatchFileFragment --fragment "default:" --count 1
+        MatchFileFragment --fragment "default" --count 1
         MatchFileFragment --fragment "if (" --count 2
 
 writing:
