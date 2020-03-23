@@ -19,7 +19,7 @@ public class ScoreTest {
     File file = null;
     Scanner input = null;
     try {
-      file = new File("../../../../inputs/test.scores");
+      file = new File("inputs/test.scores");
       input = new Scanner(file);
     } catch (FileNotFoundException noFile) {
       System.exit(0);
