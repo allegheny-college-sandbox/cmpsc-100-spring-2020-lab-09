@@ -30,7 +30,7 @@ writing:
         CountFileWords --count 300
         CountFileParagraphs --count 6
         MatchFileFragment --fragment "TODO" --count 0 --exact
-        CountMarkdownTags --tag "code_block" --count 4
+        CountMarkdownTags --tag "code_block" --count 1
         MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
         
 CountCommits --count 3
