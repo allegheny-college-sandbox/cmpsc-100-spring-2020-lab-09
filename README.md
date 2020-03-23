@@ -92,7 +92,7 @@ Of course, it's entirely possible that G. Wiz' scores are different -- so, keep 
 - [ ] Contains no:
     * `TODO` markers
     * `{Your Name Here}` markers
-- [ ] Contains 350 words
+- [ ] Contains 300 words
 - [ ] Written in correct markup (passes `mdl`)
 - [ ] Responds to all questions
 
