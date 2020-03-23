@@ -1,22 +1,27 @@
 ---
-name: lab-08
+name: lab-09
 break: true
 indent: 4
 ---
 
-src/main/java/labeight:
-    CatnapCaper.java:
+src/main/java/labnine:
+    ScoreTest.java:
         ConfirmFileExists
-        CountSingleLineComments --language Java --count 9
         MatchFileFragment --fragment "TODO" --count 0 --exact
-        MatchFileFragment --fragment "{Your Name Here} --count 0 --exact
-        MatchFileFragment --fragment "if" --count 6
-        MatchFileFragment --fragment "&&" --count 3
-        MatchFileFragment --fragment "||" --count 1
-        MatchFileFragment --fragment ".nextBoolean()"  --count 2
-        MatchFileFragment --fragment "==" --count 2
-        MatchFileFragment --fragment "boolean " --count 2
-        
+        MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
+        MatchFileFragment --fragment ".nextLine()" --count 4
+        MatchFileFragment --fragment "new WizardTest" --count 1 --exact
+        MatchFileFragment --fragment ".grade()" --count 1 --exact
+
+src/main/java/labnine:
+    WizardTest.java:
+        ConfirmFileExists       
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        MatchFileFragment --fragment "{Your Name Here}" --count 0 --exact
+        MatchFileFragment --fragment "switch(score)" --count 1 --exact
+        MatchFileFragment --fragment "case" --count 3
+        MatchFileFragment --fragment "default:" --count 1
+        MatchFileFragment --fragment "if (" --count 2
 
 writing:
     reflection.md:
@@ -30,6 +35,8 @@ writing:
         
 CountCommits --count 3
 ExecuteCommand --command "gradle build"
-ExecuteCommand --command "gradle -q --console runScenario"
-MatchCommandRegex --command "gradle -q --console runScenario" --regex "Alice recieves [0-3] year(s)" --count 1 --exact
-MatchCommandRegex --command "gradle -q --console runScenario" --regex "Bob recieves [0-3] years(s)" --count 1 --exact
+ExecuteCommand --command "gradle -q --console plain run"
+CountCommandOutput --command "gradle -q --console plain run" --count 5
+MatchCommandFragment --fragment "PASSED" --command "gradle -q --console plain run" --count 1 --exact
+MatchCommandFragment --fragment "BA" --command "gradle -q --console plain run" --count 2 --exact
+MatchCommandFragment --fragment "AA" --command "gradle -q --console plain run" --count 1 --exact

@@ -21,7 +21,7 @@ public class WizardTest {
   
   private int getNumericScore(String score) {
     int numericScore;
-    switch(score) {
+    switch (score) {
       case "AA":
         numericScore = 3;
         break;
@@ -52,7 +52,7 @@ public class WizardTest {
     score += "Potions:\t" + this.potions + "\n";
     score += "Style:\t\t" + this.style + "\n";
     score += "\n";
-    if(this.isPassing) {
+    if (this.isPassing) {
       score += "PASSED";
     } else {
       score += "FAILED";

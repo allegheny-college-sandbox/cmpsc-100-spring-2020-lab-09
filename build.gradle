@@ -30,7 +30,3 @@ checkstyle {
   maxErrors = 0
   configFile = new File(rootDir, "config/checkstyle/google_checks.xml")
 }
-
-run {
-  standardInput = System.in
-}

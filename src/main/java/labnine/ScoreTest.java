@@ -26,7 +26,6 @@ public class ScoreTest {
     }
     
     // Get name
-    
     String name = input.nextLine();
     
     // Load scores
@@ -34,8 +33,13 @@ public class ScoreTest {
     String potionsScore = input.nextLine();
     String styleScore = input.nextLine();
     
+    // Create a test object
     WizardTest test = new WizardTest(name, magicWordsScore, potionsScore, styleScore);
+    
+    // Grade the test object
     test.grade();
+    
+    // Print the result
     System.out.print(test);
   }
 }
